@@ -2,14 +2,17 @@
 #define GAMESETUP_H
 
 #include <QDialog>
-#include "gamesettings.h"
 #include <QPixmap>
+#include <kdialog.h>
+
+#include "gamesettings.h"
+
 
 namespace Ui {
 class GameSetup;
 }
 
-class GameSetup : public QDialog
+class GameSetup : public KDialog
 {
     Q_OBJECT
 

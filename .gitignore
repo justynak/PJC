@@ -3,5 +3,6 @@ moc*
 ui*
 *.pro*
 *~
-
+*_automoc
+*shell
 

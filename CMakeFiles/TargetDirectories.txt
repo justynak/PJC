@@ -1,0 +1,3 @@
+/home/justyna/PJC/PJC/src/CMakeFiles/gameoflife.kss.dir
+/home/justyna/PJC/PJC/src/CMakeFiles/gameoflife.kss_automoc.dir
+/home/justyna/PJC/PJC/CMakeFiles/uninstall.dir

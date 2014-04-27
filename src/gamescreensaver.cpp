@@ -1,9 +1,9 @@
-#include "mainwindow.h"
+#include "gamescreensaver.h"
 #include <QDebug>
 #include <QPalette>
 
 
-MainWindow::MainWindow(WId id) : KScreenSaver(id)
+GameScreenSaver::GameScreenSaver(WId id) : KScreenSaver(id)
 {
 
     QPalette p = QPalette();
@@ -17,7 +17,7 @@ MainWindow::MainWindow(WId id) : KScreenSaver(id)
 
 }
 
-MainWindow::~MainWindow()
+GameScreenSaver::~GameScreenSaver()
 {
     delete game;
 }

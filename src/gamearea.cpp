@@ -117,13 +117,14 @@ void GameArea::paintEvent(QPaintEvent *)
     painter.setPen(pen);
 
     painter.setBrush(brush);
+    pixmap.fill(settings->bkgColor);
 
     for(int i=0; i<settings->gameAreaSize.height() -1; ++i)
         for(int j =0; j<settings->gameAreaSize.width() -1 ; ++j)
         {
             if(cells[i][j].IsAlive())
             {
-             brush.setColor(settings->color);
+             brush.setColor(settings->cellColor);
              painter.setBrush(brush);
 
              switch(settings->shape)

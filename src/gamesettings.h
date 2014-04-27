@@ -3,7 +3,6 @@
 
 #include <kdialog.h>
 #include <QVector>
-
 enum Shape {Rect=0, RoundedRect, Ellipse};
 
 
@@ -14,7 +13,8 @@ public:
 
     QList<unsigned int> nToStayAlive;
     QList<unsigned int> nToRevive;
-    QColor color;
+    QColor cellColor;
+    QColor bkgColor;
     QSize gameAreaSize;
     Shape shape;
 

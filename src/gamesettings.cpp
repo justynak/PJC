@@ -25,16 +25,24 @@ void GameSettings::Load()
     KConfigGroup config( KGlobal::config(), "Settings" );
     nToRevive = config.readEntry("nToRevive", list1);
     nToStayAlive = config.readEntry("nToStayAlive", list2);
-    color = config.readEntry("Color", QColor(100, 100, 100));
+    cellColor = config.readEntry("cellColor", QColor(100, 100, 100));
+    bkgColor = config.readEntry("backgroundColor", QColor(0, 0, 0));
     gameAreaSize = config.readEntry("GameAreaSize", QSize(170, 100));
     shape = static_cast<Shape>(config.readEntry("Shape", (static_cast<int>(Rect))));
 }
 
 void GameSettings::RestoreDefault()
 {
-    //nToRevive = QList<int>({2});
-    //nToStayAlive =  QList<int>({2,3});
-    color = QColor(100, 100, 100);
+    QList<unsigned int> list1 = QList<unsigned int>();
+    list1.append(2);
+
+    QList<unsigned int> list2 = QList<unsigned int>();
+    list2.append(2);
+    list2.append(3);
+    nToRevive = list1;
+    nToStayAlive =  list2;
+    cellColor = QColor(100, 100, 100);
+    bkgColor = QColor(0,0,0);
     gameAreaSize =  QSize(170, 100);
     shape = Rect;
 }
@@ -44,7 +52,8 @@ void GameSettings::Save()
     KConfigGroup config( KGlobal::config(), "Settings" );
     config.writeEntry("nToRevive", nToRevive);
     config.writeEntry("nToStayAlive", nToStayAlive);
-    config.writeEntry("Color", color);
+    config.writeEntry("cellColor", cellColor);
+    config.writeEntry("backgroundColor", bkgColor);
     config.writeEntry("GameAreaSize", gameAreaSize);
     config.writeEntry("Shape", static_cast<int>(shape));
 }

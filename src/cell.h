@@ -5,63 +5,42 @@
 #include <QColor>
 #include <QPixmap>
 
-enum Shape {Rect, RoundedRect, Ellipse, Pixmap };
 
 
 class Cell
 {
 public:
-    Cell(Shape sh=Rect, QPoint p=QPoint(0,0), QSize s=QSize(10,10)) :
-        point_(p)
+    Cell(QPoint p=QPoint(0,0), QSize s=QSize(10,10)) :
+        point(p)
     {
-       /*
-        QString file;
-        switch(shape_)
-        {
-            case Rect:          file = ""; break;
-            case RoundedRect:   file = ""; break;
-            case Ellipse:       file = ""; break;
-            case Pixmap:        file = ""; break;
-        }
-        pixmap_.load(file);
-        //for now
+        point= p;
+        size= s;
 
-        //pixmap_ = QPixmap(QSize(10,10));
-        //pixmap_.fill(QColor(255,255,255));
-        */
-
-        point_ = p;
-        size_ = s;
-
-        rect_ = QRect(point_,size_);
-        currentState_ = nextState_ = false;
+        rect = QRect(point,size);
+        currentState = nextState = false;
     }
 
 private:
-    QSize size_;
-    QRect rect_;
-    //QPixmap pixmap_;
-    //Shape shape_;
-    QPoint point_;
+    QSize size;
+    QRect rect;
+    QPoint point;
 
-    bool currentState_;
-    bool nextState_;
-    unsigned int currentNeighboursNumber_;
+    bool currentState;
+    bool nextState;
+    unsigned int currentNeighboursNumber;
 
 public:
-    void SetSize(QSize s) {size_ = s;}
-    void SetPoint(QPoint p) {point_ = p;}
+    void SetSize(QSize s) {size= s;}
+    void SetPoint(QPoint p) {point= p;}
     void Kill();
     void Revive();
 
-    void UpdateState() {currentState_ = nextState_;}
+    void UpdateState() {currentState = nextState;}
 
-    QSize GetSize(){ return size_; }
-    QRect GetRect() { return rect_; }
-    QPoint GetPoint(){ return point_; }
-    //QPixmap GetPixmap(){return pixmap_;}
-    //Shape GetShape(){return shape_;}
-    bool IsAlive(){return currentState_;}
+    QSize GetSize(){ return size; }
+    QRect GetRect() { return rect; }
+    QPoint GetPoint(){ return point; }
+    bool IsAlive(){return currentState;}
 
 };
 

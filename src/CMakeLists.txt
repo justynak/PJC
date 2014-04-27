@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 include_directories( ${KDE4_INCLUDES} )
 
-set( gameoflife_SRCS area.cpp cell.cpp main.cpp mainwindow.cpp )
+set( gameoflife_SRCS gamearea.cpp gamesetup.cpp cell.cpp main.cpp mainwindow.cpp gamesettings.cpp gameinterface.cpp )
 
-kde4_add_ui_files( gameoflife_SRCS area.ui mainwindow.ui)
+kde4_add_ui_files( gameoflife_SRCS gamearea.ui gamesetup.ui )
 
 kde4_add_executable( gameoflife.kss ${gameoflife_SRCS} )
 

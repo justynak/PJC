@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "area.h"
+#include "gamearea.h"
 #include <kscreensaver.h>
 
 
@@ -13,7 +13,7 @@ public:
     ~MainWindow();
 
 private:
-    Area* game;
+    GameArea* game;
 
 
 };

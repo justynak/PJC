@@ -10,7 +10,7 @@ MainWindow::MainWindow(WId id) : KScreenSaver(id)
     p.setColor(QWidget::backgroundRole(), Qt::black);
     setPalette(p);
 
-    game = new Area();
+    game = new GameArea();
     embed(game);
 
     game->show();

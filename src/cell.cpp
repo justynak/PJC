@@ -3,11 +3,9 @@
 
 void Cell::Kill()
 {
-    nextState_ = false;
-    //pixmap_.fill(QColor(255,255,255));
+    nextState = false;
 }
 void Cell::Revive()
 {
-    nextState_ = true;
-    //pixmap_.fill(QColor(255,0,0));
+    nextState = true;
 }

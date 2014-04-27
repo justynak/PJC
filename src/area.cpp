@@ -1,26 +1,27 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QDebug>
+#include "area.h"
+#include "ui_area.h"
+
 #include <QPainter>
-#include <QTime>
+#include <QDebug>
 
 
-MainWindow::MainWindow( QSize s, QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+
+Area::Area( QSize s, QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Area)
 {
 
 
     startPoint_= this->mapFromGlobal(QCursor::pos());
     startPoint_ = QPoint(startPoint_.x()/10, startPoint_.y()/10);
     qDebug() << tr("Mouse position: %1, %2").arg(startPoint_.x()).arg(startPoint_.y());
-    MainWindowSize_ = s;
+    AreaSize_ = s;
 
-    for(int i=0; i<MainWindowSize_.height(); ++i)
+    for(int i=0; i<AreaSize_.height(); ++i)
     {
         cells_.append(QList<Cell>());
 
-        for(int j=0; j<MainWindowSize_.width(); ++j)
+        for(int j=0; j<AreaSize_.width(); ++j)
         {
             cells_[i].append(Cell(Rect, QPoint(10*j, 10*i)));
             //if(qrand()%2==0) cells_[i][j].Revive();
@@ -52,24 +53,25 @@ MainWindow::MainWindow( QSize s, QWidget *parent) :
     generationNr = 0;
     ui->label_2->setText(tr("Generation number: %1").arg(generationNr));
     repaint();
-    qDebug() << "MainWindow created";
+    qDebug() << "Area created";
     t = new QTimer();
     t->start(200);
     connect(t, SIGNAL(timeout()), this, SLOT(UpdateGeneration()));
 
 }
 
-MainWindow::~MainWindow()
+Area::~Area()
 {
     delete ui;
+    delete t;
 }
 
 
-void MainWindow::UpdateGeneration()
+void Area::UpdateGeneration()
 {
     unsigned int n = 0;
-    for(int i=1; i< MainWindowSize_.height() -1 ; ++i)
-        for(int j=1; j<MainWindowSize_.width() -1 ; ++j)
+    for(int i=1; i< AreaSize_.height() -1 ; ++i)
+        for(int j=1; j<AreaSize_.width() -1 ; ++j)
             {
                 n = cells_[i-1][j-1].IsAlive() + cells_[i-1][j].IsAlive() + cells_[i-1][j+1].IsAlive()
                             + cells_[i][j-1].IsAlive() + cells_[i][j+1].IsAlive() +
@@ -88,8 +90,8 @@ void MainWindow::UpdateGeneration()
             }
 
 
-    for(int i=0; i< MainWindowSize_.height() ; ++i)
-        for(int j=0; j<MainWindowSize_.width(); ++j)
+    for(int i=0; i< AreaSize_.height() ; ++i)
+        for(int j=0; j<AreaSize_.width(); ++j)
             {
                 cells_[i][j].UpdateState();
             }
@@ -99,7 +101,7 @@ void MainWindow::UpdateGeneration()
 }
 
 /*
-void MainWindow::mouseMoveEvent(QMouseEvent *event)
+void Area::mouseMoveEvent(QMouseEvent *event)
 {
     QPoint p= this->mapFromGlobal(QCursor::pos());
     cells_[p.y()/10][p.x()/10].Revive();
@@ -107,7 +109,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 }
 */
 
-bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+bool Area::eventFilter(QObject *obj, QEvent *event)
 {
   if (event->type() == QEvent::MouseMove)
   {
@@ -121,7 +123,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 }
 
 
-void MainWindow::paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     QBrush brush(QColor(0,0,0));
@@ -130,8 +132,8 @@ void MainWindow::paintEvent(QPaintEvent *)
 
     painter.setBrush(brush);
 
-    for(int i=0; i<MainWindowSize_.height() -1; ++i)
-        for(int j =0; j<MainWindowSize_.width() -1 ; ++j)
+    for(int i=0; i<AreaSize_.height() -1; ++i)
+        for(int j =0; j<AreaSize_.width() -1 ; ++j)
         {
             if(cells_[i][j].IsAlive())
             {

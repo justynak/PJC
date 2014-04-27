@@ -1,4 +1,7 @@
 *.o
 moc*
 ui*
-*.user
+*.pro*
+*~
+
+

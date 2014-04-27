@@ -10,14 +10,17 @@ TARGET = GameOfLife
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    cell.cpp \
-    area.cpp
+SOURCES += src/main.cpp\
+        src/mainwindow.cpp \
+    src/cell.cpp \
+    src/area.cpp
 
-HEADERS  += mainwindow.h \
-    cell.h \
-    area.h
+HEADERS  += src/mainwindow.h \
+    src/cell.h \
+    src/area.h
 
-FORMS    += mainwindow.ui \
-    area.ui
+FORMS    += \
+    src/area.ui
+
+OTHER_FILES += \
+    CMakeLists.txt

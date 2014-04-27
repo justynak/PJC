@@ -6,8 +6,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow area;
-    area.show();
+    //MainWindow area;
+    //area.show();
 
-    return a.exec();
+    return 0;
 }

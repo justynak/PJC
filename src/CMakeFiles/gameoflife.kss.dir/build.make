@@ -230,15 +230,15 @@ src/CMakeFiles/gameoflife.kss.dir/main.cpp.o.provides: src/CMakeFiles/gameoflife
 
 src/CMakeFiles/gameoflife.kss.dir/main.cpp.o.provides.build: src/CMakeFiles/gameoflife.kss.dir/main.cpp.o
 
-src/ui_gamesetup.h: src/gamesetup.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/justyna/PJC/PJC/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_gamesetup.h"
-	cd /home/justyna/PJC/PJC/src && /usr/bin/cmake -DKDE4_HEADER:BOOL=ON -DKDE_UIC_EXECUTABLE:FILEPATH=/usr/bin/uic-qt4 -DKDE_UIC_FILE:FILEPATH=/home/justyna/PJC/PJC/src/gamesetup.ui -DKDE_UIC_H_FILE:FILEPATH=/home/justyna/PJC/PJC/src/ui_gamesetup.h -DKDE_UIC_BASENAME:STRING=gamesetup -P /usr/share/kde4/apps/cmake/modules/kde4uic.cmake
-
 src/ui_gamearea.h: src/gamearea.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/justyna/PJC/PJC/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/justyna/PJC/PJC/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_gamearea.h"
 	cd /home/justyna/PJC/PJC/src && /usr/bin/cmake -DKDE4_HEADER:BOOL=ON -DKDE_UIC_EXECUTABLE:FILEPATH=/usr/bin/uic-qt4 -DKDE_UIC_FILE:FILEPATH=/home/justyna/PJC/PJC/src/gamearea.ui -DKDE_UIC_H_FILE:FILEPATH=/home/justyna/PJC/PJC/src/ui_gamearea.h -DKDE_UIC_BASENAME:STRING=gamearea -P /usr/share/kde4/apps/cmake/modules/kde4uic.cmake
+
+src/ui_gamesetup.h: src/gamesetup.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/justyna/PJC/PJC/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_gamesetup.h"
+	cd /home/justyna/PJC/PJC/src && /usr/bin/cmake -DKDE4_HEADER:BOOL=ON -DKDE_UIC_EXECUTABLE:FILEPATH=/usr/bin/uic-qt4 -DKDE_UIC_FILE:FILEPATH=/home/justyna/PJC/PJC/src/gamesetup.ui -DKDE_UIC_H_FILE:FILEPATH=/home/justyna/PJC/PJC/src/ui_gamesetup.h -DKDE_UIC_BASENAME:STRING=gamesetup -P /usr/share/kde4/apps/cmake/modules/kde4uic.cmake
 
 # Object files for target gameoflife.kss
 gameoflife_kss_OBJECTS = \
@@ -264,7 +264,6 @@ src/gameoflife.kss: src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o
 src/gameoflife.kss: src/CMakeFiles/gameoflife.kss.dir/main.cpp.o
 src/gameoflife.kss: /usr/lib/libkio.so.5.8.0
 src/gameoflife.kss: /usr/lib/libkscreensaver.so
-src/gameoflife.kss: /usr/lib/i386-linux-gnu/libQtOpenGL.so
 src/gameoflife.kss: /usr/lib/i386-linux-gnu/libQtNetwork.so
 src/gameoflife.kss: /usr/lib/i386-linux-gnu/libQtXml.so
 src/gameoflife.kss: /usr/lib/libkdeui.so.5.8.0
@@ -297,8 +296,8 @@ src/CMakeFiles/gameoflife.kss.dir/clean:
 	cd /home/justyna/PJC/PJC/src && $(CMAKE_COMMAND) -P CMakeFiles/gameoflife.kss.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/gameoflife.kss.dir/clean
 
-src/CMakeFiles/gameoflife.kss.dir/depend: src/ui_gamesetup.h
 src/CMakeFiles/gameoflife.kss.dir/depend: src/ui_gamearea.h
+src/CMakeFiles/gameoflife.kss.dir/depend: src/ui_gamesetup.h
 	cd /home/justyna/PJC/PJC && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/justyna/PJC/PJC /home/justyna/PJC/PJC/src /home/justyna/PJC/PJC /home/justyna/PJC/PJC/src /home/justyna/PJC/PJC/src/CMakeFiles/gameoflife.kss.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/gameoflife.kss.dir/depend
 

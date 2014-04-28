@@ -33,6 +33,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/FeatureSummary.cmake"
   "/usr/share/cmake-2.8/Modules/FindCygwin.cmake"
   "/usr/share/cmake-2.8/Modules/FindKDE4.cmake"
+  "/usr/share/cmake-2.8/Modules/FindOpenGL.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-2.8/Modules/FindPerl.cmake"

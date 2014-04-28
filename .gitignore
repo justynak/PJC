@@ -3,6 +3,7 @@ moc*
 ui*
 *.pro*
 *~
-*_automoc
+*_automoc*
 *shell
 
+/CMakeFiles*

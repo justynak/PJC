@@ -19,9 +19,10 @@ GameArea::GameArea(QWidget *parent) :
 
     settings = new GameSettings();
 
-    QSize cellSize = QSize(1700/settings->gameAreaSize.height(), 1000/settings->gameAreaSize.width());
+    QSize cellSize = QSize(1700/(settings->gameAreaSize.width()), 1000/(settings->gameAreaSize.height()));
     QPoint translation = QPoint(1700%settings->gameAreaSize.height(), 1000%settings->gameAreaSize.width());
 
+    qDebug() <<  tr("Cell size %1 %2").arg(cellSize.height()).arg(cellSize.width());
 
     for(int i=0; i<settings->gameAreaSize.height(); ++i)
     {

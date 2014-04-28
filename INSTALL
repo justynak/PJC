@@ -1,0 +1,21 @@
+To build GameOfLife you will need a basic build system (g++, make, etc.)  You
+will also need to install cmake and selected Qt4 and KDE4 development packages.
+On Debian-based systems
+    apt-get install build-essential kdebase-workspace-dev libqt5-dev
+should be sufficient.
+
+GameOfLife also comes with a simple configure script that should work for a
+generic local install.  If it doesn't suit your needs, you will need to edit the
+cmake settings by hand.
+
+Install:
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr CMakeLists.txt
+  make
+  sudo make install
+
+Note: If you do a local installation, you might not see KOceanSaver in the Screen
+Saver Settings module.  In that case, you will need to do one of two things.
+
+After that, you may need to manually refresh the system configuration cache by
+running 'kbuildsycoca4'.  KOceanSaver should now appear in Screen Saver Settings.
+

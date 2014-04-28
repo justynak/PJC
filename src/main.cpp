@@ -20,6 +20,7 @@ int main(int argc, char*argv[])
                 "justyna.kaplinska@gmail.com");
 */
     GameInterface kss;
+
     return kScreenSaverMain(argc, argv, kss);
 }
 

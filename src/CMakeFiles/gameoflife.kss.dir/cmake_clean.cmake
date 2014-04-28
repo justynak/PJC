@@ -9,8 +9,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/gameoflife.kss.dir/gamesettings.cpp.o"
   "CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o"
   "CMakeFiles/gameoflife.kss.dir/main.cpp.o"
-  "ui_gamesetup.h"
   "ui_gamearea.h"
+  "ui_gamesetup.h"
   "gameoflife.kss.pdb"
   "gameoflife.kss"
 )

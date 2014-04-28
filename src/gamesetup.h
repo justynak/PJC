@@ -26,23 +26,18 @@ private :
     QPixmap cell;
 
 private slots:
-    void on_sliderR_valueChanged(int value);
+    void onSliderRValueChanged(int value);
+    void onSliderGValueChanged(int value);
+    void onSliderBValueChanged(int value);
+    void onSliderR_2ValueChanged(int value);
+    void onSliderG_2ValueChanged(int value);
+    void onSliderB_2ValueChanged(int value);
 
-    void on_sliderG_valueChanged(int value);
+    void ShowSettings();
 
-    void on_sliderB_valueChanged(int value);
-
-    void on_sliderR_2_valueChanged(int value);
-
-    void on_sliderG_2_valueChanged(int value);
-
-    void on_sliderB_2_valueChanged(int value);
-
-    void on_buttonDefault_clicked();
-
-    void on_buttonOk_clicked();
-
-    void on_buttonExit_clicked();
+    void onOkClicked();
+    void onHelpClicked();
+    void onDefaultClicked();
 
 private:
     Ui::GameSetup *ui;

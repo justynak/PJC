@@ -4,7 +4,7 @@ include_directories( ${KDE4_INCLUDES} )
 
 set( gameoflife_SCRS cell.cpp gamearea.cpp gameinterface.cpp gamescreensaver.cpp gamesettings.cpp gamesetup.cpp main.cpp )
 
-kde4_add_ui_files( gameoflife_SCRS gamearea.ui gamesetup.ui )
+kde4_add_ui_files( gameoflife_SCRS gamearea.ui  gamesetup.ui )
 
 kde4_add_executable( gameoflife.kss ${gameoflife_SCRS} )
 

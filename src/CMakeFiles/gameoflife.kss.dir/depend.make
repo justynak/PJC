@@ -180,7 +180,6 @@ src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QApplic
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QButtonGroup
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QColor
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QHeaderView
-src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QLabel
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QMouseEvent
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QPaintEvent
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/QPainter
@@ -212,7 +211,6 @@ src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qicon.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qimage.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qitemselectionmodel.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qkeysequence.h
-src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qlabel.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qmacdefines_mac.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qmatrix.h
 src/CMakeFiles/gameoflife.kss.dir/gamearea.cpp.o: /usr/include/qt4/QtGui/qmime.h
@@ -733,6 +731,7 @@ src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QAppli
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QButtonGroup
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QCheckBox
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QComboBox
+src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QDesktopWidget
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QDialog
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QHBoxLayout
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QHeaderView
@@ -740,7 +739,6 @@ src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QLabel
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QLineEdit
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QPixmap
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QPlatformWindow
-src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QPushButton
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QSlider
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QVBoxLayout
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/QWidget
@@ -789,7 +787,6 @@ src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qpixma
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qplatformwindow_qpa.h
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qplatformwindowformat_qpa.h
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qpolygon.h
-src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qpushbutton.h
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qregion.h
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qrgb.h
 src/CMakeFiles/gameoflife.kss.dir/gamesetup.cpp.o: /usr/include/qt4/QtGui/qrubberband.h

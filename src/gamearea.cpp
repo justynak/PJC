@@ -5,7 +5,6 @@
 #include <QDebug>
 
 
-
 GameArea::GameArea(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameArea)
@@ -21,6 +20,8 @@ GameArea::GameArea(QWidget *parent) :
 
     QSize cellSize = QSize(1700/(settings->gameAreaSize.width()), 1000/(settings->gameAreaSize.height()));
     QPoint translation = QPoint(1700%settings->gameAreaSize.height(), 1000%settings->gameAreaSize.width());
+
+    pixmap = QPixmap(1700, 1000);
 
     qDebug() <<  tr("Cell size %1 %2").arg(cellSize.height()).arg(cellSize.width());
 
@@ -43,9 +44,7 @@ GameArea::GameArea(QWidget *parent) :
 
     ui->setupUi(this);
 
-
     generationNr = 0;
-    ui->label2->setText(tr("Generation number: %1").arg(generationNr));
     repaint();
     qDebug() << "GameArea created";
     t = new QTimer();
@@ -90,7 +89,6 @@ void GameArea::UpdateGeneration()
                 cells[i][j].UpdateState();
             }
 
-    ui->label2->setText(tr("Generation number: %1").arg(generationNr ++));
     repaint();
 }
 
@@ -113,12 +111,17 @@ bool GameArea::eventFilter(QObject *obj, QEvent *event)
 void GameArea::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    QBrush brush(QColor(0,0,0));
-    QPen pen(QColor(0xE8, 0xDA, 0xB8));
-    painter.setPen(pen);
+
+    QBrush brushBkg(settings->bkgColor);
+    QBrush brush(settings->bkgColor);
+
+    painter.setBrush(brushBkg);
+    painter.fillRect(pixmap.rect(), brushBkg);
 
     painter.setBrush(brush);
-    pixmap.fill(settings->bkgColor);
+
+
+    qDebug() << tr("Bkg color: %1 %2 %3").arg(settings->bkgColor.red()).arg(settings->bkgColor.green()).arg(settings->bkgColor.blue());
 
     for(int i=0; i<settings->gameAreaSize.height() -1; ++i)
         for(int j =0; j<settings->gameAreaSize.width() -1 ; ++j)
@@ -126,8 +129,8 @@ void GameArea::paintEvent(QPaintEvent *)
             if(cells[i][j].IsAlive())
             {
              brush.setColor(settings->cellColor);
-             painter.setBrush(brush);
 
+            painter.setBrush(brush);
              switch(settings->shape)
              {
                 case Rect: painter.drawRect(cells[i][j].GetRect()); break;
@@ -135,9 +138,8 @@ void GameArea::paintEvent(QPaintEvent *)
                 case Ellipse: painter.drawEllipse(cells[i][j].GetRect()); break;
                 default: break;
              }
-            }
-        }
+           }
+         }
 
-    ui->label->setPixmap(pixmap);
 }
 

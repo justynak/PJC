@@ -29,6 +29,7 @@ void GameSettings::Load()
     bkgColor = config.readEntry("backgroundColor", QColor(0, 0, 0));
     gameAreaSize = config.readEntry("GameAreaSize", QSize(170, 100));
     shape = static_cast<Shape>(config.readEntry("Shape", (static_cast<int>(Rect))));
+
 }
 
 void GameSettings::RestoreDefault()
@@ -45,6 +46,8 @@ void GameSettings::RestoreDefault()
     bkgColor = QColor(0,0,0);
     gameAreaSize =  QSize(170, 100);
     shape = Rect;
+
+    Save();
 }
 
 void GameSettings::Save()
@@ -57,3 +60,5 @@ void GameSettings::Save()
     config.writeEntry("GameAreaSize", gameAreaSize);
     config.writeEntry("Shape", static_cast<int>(shape));
 }
+
+

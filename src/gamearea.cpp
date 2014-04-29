@@ -4,26 +4,19 @@
 #include <QPainter>
 #include <QDebug>
 
+#define X   1250
+#define Y   1000
 
 GameArea::GameArea(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameArea)
 {
-
-
-    startPoint= this->mapFromGlobal(QCursor::pos());
-    startPoint = QPoint(startPoint.x()/10, startPoint.y()/10);
-    qDebug() << tr("Mouse position: %1, %2").arg(startPoint.x()).arg(startPoint.y());
-
-
     settings = new GameSettings();
 
-    QSize cellSize = QSize(1700/(settings->gameAreaSize.width()), 1000/(settings->gameAreaSize.height()));
-    QPoint translation = QPoint(1700%settings->gameAreaSize.height(), 1000%settings->gameAreaSize.width());
-
-    pixmap = QPixmap(1700, 1000);
-
-    qDebug() <<  tr("Cell size %1 %2").arg(cellSize.height()).arg(cellSize.width());
+    QSize cellSize = QSize(X/(settings->gameAreaSize.width() +1), Y/(settings->gameAreaSize.height()+1));
+    startPoint= this->mapFromGlobal(QCursor::pos());
+    startPoint = QPoint(startPoint.x()/cellSize.width(), startPoint.y()/cellSize.height());
+    pixmap = QPixmap(X, Y);
 
     for(int i=0; i<settings->gameAreaSize.height(); ++i)
     {
@@ -31,18 +24,22 @@ GameArea::GameArea(QWidget *parent) :
 
         for(int j=0; j<settings->gameAreaSize.width(); ++j)
         {
-            cells[i].append(Cell(QPoint(cellSize.height()*j, cellSize.width()*i) + translation, cellSize));
+            cells[i].append(Cell(QPoint(cellSize.height()*j, cellSize.width()*i) , cellSize));
         }
     }
+
+
+    ui->setupUi(this);
     qApp->installEventFilter(this);
+
+    startPoint= this->mapFromGlobal(QCursor::pos());
+    startPoint = QPoint(startPoint.x()/cellSize.width(), startPoint.y()/cellSize.height());
 
     for(int i=-1; i<3; ++i)
         for(int j=-1; j<3; ++j)
         {
             if(rand()%10) cells[startPoint.y()-i][startPoint.x()-j].Revive();
         }
-
-    ui->setupUi(this);
 
     generationNr = 0;
     repaint();
@@ -114,11 +111,13 @@ void GameArea::paintEvent(QPaintEvent *)
 
     QBrush brushBkg(settings->bkgColor);
     QBrush brush(settings->bkgColor);
+    QPen pen(settings->bkgColor);
 
     painter.setBrush(brushBkg);
     painter.fillRect(pixmap.rect(), brushBkg);
 
     painter.setBrush(brush);
+    painter.setPen(pen);
 
 
     qDebug() << tr("Bkg color: %1 %2 %3").arg(settings->bkgColor.red()).arg(settings->bkgColor.green()).arg(settings->bkgColor.blue());

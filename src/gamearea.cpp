@@ -13,10 +13,10 @@ GameArea::GameArea(QWidget *parent) :
 {
     settings = new GameSettings();
 
-    QSize cellSize = QSize(X/(settings->gameAreaSize.width() +1), Y/(settings->gameAreaSize.height()+1));
-    startPoint= this->mapFromGlobal(QCursor::pos());
-    startPoint = QPoint(startPoint.x()/cellSize.width(), startPoint.y()/cellSize.height());
     pixmap = QPixmap(X, Y);
+
+    QSize cellSize = QSize(X/(settings->gameAreaSize.width() +1), Y/(settings->gameAreaSize.height()+1));
+
 
     for(int i=0; i<settings->gameAreaSize.height(); ++i)
     {
@@ -28,7 +28,7 @@ GameArea::GameArea(QWidget *parent) :
         }
     }
 
-
+    //setup UI
     ui->setupUi(this);
     qApp->installEventFilter(this);
 
@@ -42,18 +42,22 @@ GameArea::GameArea(QWidget *parent) :
         }
 
     generationNr = 0;
+
+
     repaint();
     qDebug() << "GameArea created";
+
+
     t = new QTimer();
     t->start(200);
     connect(t, SIGNAL(timeout()), this, SLOT(UpdateGeneration()));
-
 }
 
 GameArea::~GameArea()
 {
     delete ui;
     delete t;
+    if(settings != NULL) delete settings;
 }
 
 

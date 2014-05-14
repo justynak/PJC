@@ -28,21 +28,17 @@ private:
     QPixmap pixmap;
     unsigned int generationNr;
     QTimer* t;
-
     QPoint startPoint;
-
     GameSettings* settings;
+
+
 
 public slots:
     void paintEvent(QPaintEvent *);
     bool eventFilter(QObject *obj, QEvent *event);
 
-    void SetPixmap(QPixmap p) {pixmap = p;}
     void UpdateGeneration();
     void UpdatePixmap(){repaint();}
-
-    QPixmap GetPixmap() {return pixmap;}
-
 };
 
 

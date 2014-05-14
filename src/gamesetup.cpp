@@ -50,7 +50,7 @@ GameSetup::GameSetup(QWidget *parent) :
 GameSetup::~GameSetup()
 {
     delete ui;
-    delete settings;
+    if(settings != NULL) delete settings;
 }
 
 void GameSetup::onSliderRValueChanged(int )

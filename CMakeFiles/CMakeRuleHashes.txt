@@ -1,5 +1,0 @@
-# Hashes of file build rules.
-3709f8ed9daa944efb6c3ab0e011a6af CMakeFiles/uninstall
-67df7ea863f0b6fe46a3a15046ad463c src/CMakeFiles/gameoflife.kss_automoc
-26e7a1900bdd62b1ecafe7babd2b5e3e src/ui_gamearea.h
-f4694d503aa5a81f179ef124299a3b80 src/ui_gamesetup.h

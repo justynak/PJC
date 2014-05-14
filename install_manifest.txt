@@ -1,3 +1,0 @@
-/usr/bin/gameoflife.kss
-/usr/share/kde4/services/ScreenSavers/gameoflife.desktop
-/usr/share/man/man1/gameoflife.kss.1

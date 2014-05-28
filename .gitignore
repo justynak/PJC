@@ -5,5 +5,10 @@ ui*
 *~
 *_automoc*
 *shell
+CMakeFiles*
+CMakeFilesTemp*
+*cmake_*
 
 /CMakeFiles*
+/CMakeFilesTemp*
+Makefile*

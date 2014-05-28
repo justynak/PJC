@@ -6,9 +6,8 @@
 #include <QTimer>
 #include <QMouseEvent>
 
-#include "cell.h"
 #include "gamesettings.h"
-
+#include "area.h"
 namespace Ui {
 class GameArea;
 }
@@ -19,26 +18,23 @@ class GameArea : public QWidget
     Q_OBJECT
 public:
     explicit GameArea(QWidget *parent = 0);
-    ~GameArea();
+    virtual ~GameArea();
 
 private:
     Ui::GameArea *ui;
-
-    QList<QList<Cell> > cells;
-    QPixmap pixmap;
-    unsigned int generationNr;
+    Area* area;
+    QPixmap* pixmap;
     QTimer* t;
-    QPoint startPoint;
     GameSettings* settings;
 
+    QSize* cellSize;
 
 
 public slots:
     void paintEvent(QPaintEvent *);
     bool eventFilter(QObject *obj, QEvent *event);
 
-    void UpdateGeneration();
-    void UpdatePixmap(){repaint();}
+    void UpdatePixmap(){area->UpdateGeneration();repaint();}
 };
 
 

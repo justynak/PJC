@@ -9,12 +9,16 @@ ui*
 CMakeFiles*
 CMakeCache*
 CMakeTemp*
+CMakeTmp*
 CMakeFilesTemp*
 *cmake_*
+*swp
+*install_manifest*
 
 /CMakeFiles*
 /CMakeCache*
 /CMakeTemp*
+/CMakeTmp*
 /CMakeFilesTemp*
 Makefile*
 *install_manifest*

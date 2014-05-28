@@ -3,12 +3,18 @@ moc*
 ui*
 *.pro*
 *~
+*user
 *_automoc*
 *shell
 CMakeFiles*
+CMakeCache*
+CMakeTemp*
 CMakeFilesTemp*
 *cmake_*
 
 /CMakeFiles*
+/CMakeCache*
+/CMakeTemp*
 /CMakeFilesTemp*
 Makefile*
+*install_manifest*
